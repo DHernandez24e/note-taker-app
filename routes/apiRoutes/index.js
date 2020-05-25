@@ -3,27 +3,31 @@ const { notes } = require('../../db/db.json');
 const { v4: uuidv4 } = require('uuid');
 const router = require('express').Router();
 
+//GET request to send existing data in db
 router.get('/notes', (req, res) => {
     let results = notes;
     return res.json(results);
 });
 
+//POST request to input data to db.
+//Pseudo-validation existant in index.js file for HTML page
 router.post('/notes', (req, res) => {
+
+    //UUID used to set unique ID to every object entered
     req.body.id = uuidv4();
 
-    console.log(req.body);
-
+    //Runs req.body through createNewNote function
     const note = createNewNote(req.body, notes);
     return res.json(note);
 });
 
+//DELETE request to remove items from db
 router.delete('/notes/:id', (req, res) => {
 
     let query = req.params.id;
 
-    const test = deleteNote(query, notes);
-    console.log(test);
-    return res.json(test);
+    const result = deleteNote(query, notes);
+    return res.json(result);
 });
 
 module.exports = router;
