@@ -9,8 +9,8 @@
   - App built on Node.js and uses Express.js for HTTP requests.
   - A live version of this can be seen [here](https://frozen-atoll-19249.herokuapp.com/)
 
-  ![Screenshot](./screenshot.jpg)
-  ![Screenshot2](./screenshot2.jpg)
+  ![Screenshot](/screenshot.jpg)
+  ![Screenshot2](/screenshot2.jpg)
 
   ## Table of Contents
   * [Installation](#installation)
